@@ -1,19 +1,11 @@
 ```markdown
-# meta-hervest
-
-[![npm version](https://badge.fury.io/js/meta-hervest.svg)](https://www.npmjs.com/package/meta-hervest)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
+## meta-hervest
 **meta-hervest** is a lightweight JavaScript library for extracting metadata from video files in the browser. It provides a simple API to retrieve information such as file name, type, size, dimensions, duration, and more.
 
 ## Installation
-
-```bash
 npm install meta-hervest
-```
 
 ## Usage
-
 ```javascript
 const { extractVideoMetadata } = require('meta-hervest');
 
