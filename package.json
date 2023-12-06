@@ -1,7 +1,7 @@
 {
-  "name": "codersgyan-colorify",
+  "name": "@meta/hervest",
   "version": "1.0.0",
-  "description": "A library to colorify your console logs",
+  "description": "A library to retrieve dimensions of media files",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -10,22 +10,48 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codersgyan/codersgyan-colorify.git"
+    "url": "git+https://github.com/codersgyan/codersgyan-dimensions.git"
   },
   "keywords": [
-    "console log colors",
-    "colorify logs"
+    "media dimensions",
+    "media info",
+    "file dimensions",
+    "file info",
+    "video dimensions",
+    "video info",
+    "image dimensions",
+    "image info",
+    "media info",
+    "file info",
+    "video info",
+    "image info",
+    "metadata",
+    "file metadata",
+    "video metadata",
+    "image metadata",
+    "dimensions",
+    "size",
+    "aspect ratio",
+    "resolution",
+    "multimedia",
+    "media analysis",
+    "media utilities",
+    "media tools"
   ],
-  "author": "Rakesh K <codersgyan@gmail.com>",
+  "author": "Code craft k mr.craft.code@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codersgyan/codersgyan-colorify/issues"
+    "url": "https://github.com/craft-developers/-meta-harvest/issues"
   },
-  "homepage": "https://github.com/codersgyan/codersgyan-colorify#readme",
+  "homepage": "https://github.com/craft-developers/-meta-harvest",
   "devDependencies": {
     "typescript": "^4.6.3"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
-    "lib/**/*"
+    "lib/*"
   ]
 }
