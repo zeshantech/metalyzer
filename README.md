@@ -8,14 +8,13 @@
 npm install meta-hervest
 ```
 
-## Usage
+## Usage for Video
 
 ```javascript
-import { extractVideoMetadata } from "meta-hervest";
-
-const video = "<your video which type is FILE>";
 const metaData = await extractVideoMetadata(video);
+const videoUrl = await extractVideoUrl(video);
 console.log(metaData);
+console.log(videoUrl);
 ```
 
 ## Features
@@ -35,23 +34,6 @@ Extracts metadata from a video file.
 #### Returns
 
 A Promise that resolves to an object containing video metadata.
-
-```typescript
-interface VideoMetadata {
-  fileName: string;
-  fileType: string;
-  fileSizeKB: number;
-  videoWidth?: number;
-  videoHeight?: number;
-  videoDuration: number;
-  lastModified?: Date;
-  lastModifiedDate?: Date;
-  webkitRelativePath?: string;
-  webkitEntry?: FileSystemEntry;
-  mimeType: string;
-  fileExtension: string;
-}
-```
 
 ## License
 

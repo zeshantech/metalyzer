@@ -1,5 +1,5 @@
 {
-  "name": "meta-hervest",
+  "name": "metalyzer",
   "version": "1.0.0",
   "description": "A library to retrieve dimensions of media files",
   "main": "lib/index.js",
@@ -39,7 +39,7 @@
     "media tools"
   ],
   "author": "CodeCraft -k <mr.craft.code@gmail.com>",
-  "license": "MIT",
+  "license": "MITA",
   "bugs": {
     "url": "https://github.com/craft-developers/-meta-harvest/issues"
   },
