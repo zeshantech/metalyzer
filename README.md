@@ -1,11 +1,11 @@
-## meta-hervest
+## metalyzer
 
-**meta-hervest** is a lightweight JavaScript library for extracting metadata from video files in the browser. It provides a simple API to retrieve information such as file name, type, size, dimensions, duration, and more.
+**metalyzer** is a lightweight JavaScript library for extracting metadata from video files in the browser. It provides a simple API to retrieve information such as file name, type, size, dimensions, duration, and more.
 
 ## Installation
 
 ```
-npm install meta-hervest
+npm install metalyzer
 ```
 
 ## Usage for Video
@@ -45,7 +45,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Issues
 
-If you discover any issues, please [open an issue](https://github.com/your-username/meta-hervest/issues).
+If you discover any issues, please [open an issue](https://github.com/your-username/metalyzer/issues).
 
 ## Changelog
 
