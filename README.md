@@ -1,6 +1,6 @@
 ## metalyzer
 
-**metalyzer** is a lightweight JavaScript library for extracting metadata from video files in the browser. It provides a simple API to retrieve information such as file name, type, size, dimensions, duration, and more.
+**metalyzer** is a lightweight JavaScript library for extracting metadata from video/Image files. It provides a simple API to retrieve information such as type, size, dimensions, base64, blob, URL, video-duration, and more.
 
 ## Installation
 
@@ -10,30 +10,42 @@ npm install metalyzer
 
 ## Usage for Video
 
-```javascript
+```Typescript
 const metaData = await extractVideoMetadata(video);
 const videoUrl = await extractVideoUrl(video);
+const videoBlob = await convertVideoInBlob(video);
 console.log(metaData);
 console.log(videoUrl);
+console.log(videoUrl);
+```
+
+## Usage for Image
+
+```Typescript
+const metaData = await extractImageMetadata(video);
+const imageUrl = await extractImageUrl(video);
+const imageBase64 = await extractImagebase64(video);
+console.log(metaData);
+console.log(imageUrl);
+console.log(imageBase64);
 ```
 
 ## Features
 
-- Extracts various video metadata, including file name, type, size, dimensions, duration, etc.
+- Extracts various video metadata, including file name,url,base64, blobm, dimensions, duration, etc.
 - Provides a simple and easy-to-use API for metadata extraction.
-- Supports custom options for advanced usage.
 
-## API
+## APIs
 
 ### `extractVideoMetadata(videoFile: File): Promise<VideoMetadata>`
+### `extractImageBase64(imageFile: File): Promise<string>;`
+### `extractImageMetadata(imageFile: File): Promise<ImageMetadata>;`
+### `extractImageUrl(imageFile: File): Promise<string>;`
+### `convertVideoInBlob(videoFile: File): Promise<Blob>;`
+### `extractVideoMetadata(videoFile: File): Promise<VideoMetadata>;`
+### `extractVideoUrl(videoFile: File): Promise<string>;`
+### `getFileExtension(fileName: string): string;`
 
-Extracts metadata from a video file.
-
-- `videoFile`: The File object representing the video file.
-
-#### Returns
-
-A Promise that resolves to an object containing video metadata.
 
 ## License
 
