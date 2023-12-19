@@ -13,30 +13,12 @@
     "url": "https://github.com/craft-developers/metalyzer"
   },
   "keywords": [
-    "media dimensions",
-    "media info",
-    "file dimensions",
-    "file info",
+    "video thumbnail",
+    "image url",
+    "video url",
     "video dimensions",
-    "video info",
     "image dimensions",
-    "image info",
-    "media info",
-    "file info",
-    "video info",
-    "image info",
-    "metadata",
-    "file metadata",
-    "video metadata",
-    "image metadata",
-    "dimensions",
-    "size",
-    "aspect ratio",
-    "resolution",
-    "multimedia",
-    "media analysis",
-    "media utilities",
-    "media tools"
+    "video duration"
   ],
   "author": "CodeCraft -k <mr.craft.code@gmail.com>",
   "license": "MITA",
@@ -45,6 +27,7 @@
   },
   "homepage": "https://github.com/craft-developers/metalyzer",
   "devDependencies": {
+    "@types/node": "^20.10.5",
     "typescript": "^4.9.5"
   },
   "publishConfig": {

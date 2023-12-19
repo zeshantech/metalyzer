@@ -1,6 +1,6 @@
 ## metalyzer
 
-**metalyzer** is a lightweight JavaScript library for extracting metadata from video/Image files. It provides a simple API to retrieve information such as type, size, dimensions, base64, blob, URL, video-duration, and more.
+**metalyzer** is a lightweight JavaScript library for extracting metadata from video/Image files. It provides a simple API to retrieve information such as type, size, dimensions, base64, blob, URL,thumbail,video-duration, and more.
 
 ## Installation
 
@@ -25,9 +25,12 @@ console.log(videoUrl);
 const metaData = await extractImageMetadata(video);
 const imageUrl = await extractImageUrl(video);
 const imageBase64 = await extractImagebase64(video);
+const [thumbnail1, thumbnail2] = await generateThumbnailsFromVideo(video);
 console.log(metaData);
 console.log(imageUrl);
 console.log(imageBase64);
+<img src={thumbnail1} />
+<img src={thumbnail2} />
 ```
 
 ## Features
@@ -37,15 +40,17 @@ console.log(imageBase64);
 
 ## APIs
 
-### `extractVideoMetadata(videoFile: File): Promise<VideoMetadata>`
-### `extractImageBase64(imageFile: File): Promise<string>;`
-### `extractImageMetadata(imageFile: File): Promise<ImageMetadata>;`
-### `extractImageUrl(imageFile: File): Promise<string>;`
-### `convertVideoInBlob(videoFile: File): Promise<Blob>;`
-### `extractVideoMetadata(videoFile: File): Promise<VideoMetadata>;`
-### `extractVideoUrl(videoFile: File): Promise<string>;`
-### `getFileExtension(fileName: string): string;`
-
+```Typescript
+    extractVideoMetadata(videoFile: File): Promise<VideoMetadata>
+    extractImageBase64(imageFile: File): Promise<string>;
+    extractImageMetadata(imageFile: File): Promise<ImageMetadata>;
+    extractImageUrl(imageFile: File): Promise<string>;
+    convertVideoInBlob(videoFile: File): Promise<Blob>;
+    extractVideoMetadata(videoFile: File): Promise<VideoMetadata>;
+    extractVideoUrl(videoFile: File): Promise<string>;
+    getFileExtension(fileName: string): string;
+    generateThumbnailsFromVideo(videoFile: File): Promise<[string, string]>
+```
 
 ## License
 
