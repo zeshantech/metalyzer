@@ -1,7 +1,7 @@
 import { getThumbnail } from "../utils/getThumbnail";
 import extractVideoUrl from "./extractVideoUrl";
 
-export default async function generateThumbnailsFromVideo(videoFile: File): Promise<[string, string]> {
+export default async function extractThumbnailsFromVideo(videoFile: File): Promise<[string, string]> {
   // Convert File to video URL
   const videoUrl = await extractVideoUrl(videoFile);
 

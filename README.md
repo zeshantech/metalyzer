@@ -25,7 +25,7 @@ console.log(videoUrl);
 const metaData = await extractImageMetadata(video);
 const imageUrl = await extractImageUrl(video);
 const imageBase64 = await extractImagebase64(video);
-const [thumbnail1, thumbnail2] = await generateThumbnailsFromVideo(video);
+const [thumbnail1, thumbnail2] = await extractThumbnailsFromVideo(video);
 console.log(metaData);
 console.log(imageUrl);
 console.log(imageBase64);
@@ -49,7 +49,7 @@ console.log(imageBase64);
     extractVideoMetadata(videoFile: File): Promise<VideoMetadata>;
     extractVideoUrl(videoFile: File): Promise<string>;
     getFileExtension(fileName: string): string;
-    generateThumbnailsFromVideo(videoFile: File): Promise<[string, string]>
+    extractThumbnailsFromVideo(videoFile: File): Promise<[string, string]>
 ```
 
 ## License
