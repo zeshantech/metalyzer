@@ -1,31 +1,27 @@
-import { getThumbnail } from "../utils/getThumbnail";
-import extractVideoUrl from "./extractVideoUrl";
+export default function extractThumbnailsFromVideo(file: File): Promise<string | null> {
+  return new Promise((resolve) => {
+    const canvas = document.createElement("canvas");
+    const video = document.createElement("video");
 
-export default async function extractThumbnailsFromVideo(videoFile: File): Promise<[string, string]> {
-  // Convert File to video URL
-  const videoUrl = await extractVideoUrl(videoFile);
+    // This is important
+    video.autoplay = true;
+    video.muted = true;
+    video.src = URL.createObjectURL(file);
 
-  // Create video element
-  const video = document.createElement("video");
-  video.src = videoUrl;
+    video.onloadeddata = () => {
+      const ctx = canvas.getContext("2d");
 
-  // Wait for the video metadata to load
-  video.load();
+      if (ctx) {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
 
-  // Get the duration of the video
-  const duration = video.duration;
-
-  // Calculate the time points for thumbnails
-  const time1 = Math.min(duration / 3, duration - 1);
-  const time2 = Math.min((2 * duration) / 3, duration - 1);
-
-  // Get thumbnails using canvas
-  const thumbnail1 = await getThumbnail(video, time1);
-  const thumbnail2 = await getThumbnail(video, time2);
-
-  // Clean up the video element
-  video.src = "";
-  video.load();
-
-  return [thumbnail1, thumbnail2];
+        ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+        video.pause();
+        resolve(canvas.toDataURL("image/png"));
+      } else {
+        console.error("Error: Unable to get 2D context from canvas.");
+        resolve(null);
+      }
+    };
+  });
 }
