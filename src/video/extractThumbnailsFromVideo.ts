@@ -1,4 +1,4 @@
-export default function extractThumbnailsFromVideo(file: File): Promise<string | null> {
+export default function extractThumbnailsFromVideo(file: File): Promise<string> {
   return new Promise((resolve) => {
     const canvas = document.createElement("canvas");
     const video = document.createElement("video");
@@ -20,7 +20,7 @@ export default function extractThumbnailsFromVideo(file: File): Promise<string |
         resolve(canvas.toDataURL("image/png"));
       } else {
         console.error("Error: Unable to get 2D context from canvas.");
-        resolve(null);
+        resolve("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Aspect_ratio_-_16x9.svg/2560px-Aspect_ratio_-_16x9.svg.png");
       }
     };
   });
