@@ -1,3 +1,5 @@
+import { Buffer } from "buffer";
+
 export default async function fileToBuffer(file: File): Promise<Buffer> {
   try {
     if (!file || !file.arrayBuffer) {
