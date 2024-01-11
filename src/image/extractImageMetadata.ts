@@ -1,5 +1,7 @@
 import { getFileExtension } from "../utils/getFileExtension";
 
+export type ImageMimeType = "image/jpeg" | "image/jpg" | "image/png" | "image/gif" | "image/webp";
+
 export interface ImageMetadata {
   fileName: string;
   fileType: string;
@@ -10,7 +12,7 @@ export interface ImageMetadata {
   lastModifiedDate?: Date;
   webkitRelativePath?: string;
   webkitEntry?: FileSystemEntry;
-  mimeType: string;
+  mimeType: ImageMimeType;
   fileExtension: string;
 }
 
@@ -32,7 +34,7 @@ export default function extractImageMetadata(imageFile: File): Promise<ImageMeta
           imageHeight: image.height,
           lastModified: imageFile.lastModified ? new Date(imageFile.lastModified) : undefined,
           webkitRelativePath: imageFile.webkitRelativePath,
-          mimeType: imageFile.type, // Add MIME type
+          mimeType: imageFile.type as ImageMimeType, // Add MIME type
           fileExtension: getFileExtension(imageFile.name), // Add file extension
           // Add other properties accordingly
         };

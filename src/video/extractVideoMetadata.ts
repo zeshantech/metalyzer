@@ -2,6 +2,8 @@
 
 import { getFileExtension } from "../utils/getFileExtension";
 
+export type VideoMineType = "video/mp4" | "video/webm" | "video/avi" | "video/mpeg";
+
 export interface VideoMetadata {
   fileName: string;
   fileType: string;
@@ -13,7 +15,7 @@ export interface VideoMetadata {
   lastModifiedDate?: Date;
   webkitRelativePath?: string;
   webkitEntry?: FileSystemEntry;
-  mimeType: string;
+  mimeType: VideoMineType;
   fileExtension: string;
 }
 
@@ -38,7 +40,7 @@ export default function extractVideoMetadata(videoFile: File): Promise<VideoMeta
           videoDuration: videoDurationInSeconds,
           lastModified: videoFile.lastModified ? new Date(videoFile.lastModified) : undefined,
           webkitRelativePath: videoFile.webkitRelativePath,
-          mimeType: videoFile.type, // Add MIME type
+          mimeType: videoFile.type as VideoMineType, // Add MIME type
           fileExtension: getFileExtension(videoFile.name), // Add file extension
           // Add other properties accordingly
         };
